@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<link rel="stylesheet" href="assets/css/libs.bundle.css" />
+<link rel="stylesheet" href="assets/css/theme-sans-serif.bundle.css" id="themeSansSerif" disabled />
+<script src="assets/js/demo.bundle.js"></script>
+<link rel="stylesheet" href="assets/css/theme.bundle.css" />
+<title>Kudiland Forum</title>
+</head>
+<body style="padding-top: 108px;">
+<div class="modal fade" id="modalSignIn" tabindex="-1" role="dialog" aria-labelledby="modalSignInHeading" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+        <h1 class="mb-4" id="modalSignInHeading"> Sign In </h1>
+        <p> Don’t have an account? <a href="">Sign up</a> </p>
+        <form class="mb-6">
+          <div class="form-group">
+            <label class="visually-hidden" for="signInEmail"> Your email </label>
+            <input class="form-control" id="signInEmail" type="email" placeholder="Your email">
+          </div>
+          <div class="form-group">
+            <div class="input-group inpit-group-merge">
+              <input class="form-control" id="signInPassword" placeholder="Your password" type="password" aria-label="Your password" aria-describedby="signInPasswordCaption">
+              <a class="input-group-text text-decoration-none text-gray-500" id="signInPasswordCaption" data-toggle="password" href="#signInPassword"> <i class="fe fe-eye"></i> </a> </div>
+          </div>
+          <button class="btn w-100 btn-primary"> Sign in </button>
+        </form>
+        <a class="fs-sm" href="password-reset.html"> Forgot your password? </a> </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="modalSignUpHeading" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+        <h1 class="mb-4" id="modalSignUpHeading"> Sign Up </h1>
+        <p> Create beautiful marketing websites in hours instead of weeks. </p>
+        <form class="mb-6">
+          <div class="form-group">
+            <label class="visually-hidden" for="signUpEmail"> Your email </label>
+            <input class="form-control" id="signUpEmail" type="email" placeholder="Your email">
+          </div>
+          <div class="form-group">
+            <div class="input-group inpit-group-merge">
+              <input class="form-control" id="signUpPassword" placeholder="Your password" type="password" aria-label="Your password" aria-describedby="signUpPasswordCaption">
+              <a class="input-group-text text-decoration-none text-gray-500" id="signUpPasswordCaption" data-toggle="password" href="#signUpPassword"> <i class="fe fe-eye"></i> </a> </div>
+          </div>
+          <button class="btn w-100 btn-primary"> Sign up </button>
+        </form>
+        <small class="text-muted"> Already have an account? <a href="sign-in.html">Login</a> </small> </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modalPasswordReset" tabindex="-1" role="dialog" aria-labelledby="modalPasswordResetHeading" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+        <h1 class="display-4 mb-4" id="modalPasswordResetHeading"> Password reset </h1>
+        <p class="text-muted"> Enter your email to reset your password. </p>
+        <form class="mb-6">
+          <div class="form-group">
+            <label class="visually-hidden" for="passwordResetEmail"> Your email </label>
+            <input class="form-control" id="passwordResetEmail" type="email" placeholder="Your email">
+          </div>
+          <button class="btn w-100 btn-primary"> Reset password </button>
+        </form>
+        <small class="text-muted"> Remember your password? <a href="sign-in.html">Log in</a>. </small> </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modalSale" tabindex="-1" role="dialog" aria-labelledby="modalSaleHeading" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+        <img class="img-fluid mb-4 mt-n11" src="assets/img/illustrations/illustration-4.png" alt="...">
+        <h1 class="mb-4" id="modalSaleHeading"> 30 Day Free Trial </h1>
+        <p class="text-muted"> We’ll help you get started by getting you guides and all the basic informaiton. </p>
+        <form class="mb-6">
+          <div class="form-group">
+            <label class="visually-hidden" for="saleModalEmail"> Your email </label>
+            <input class="form-control" id="saleModalEmail" type="email" placeholder="Your email">
+          </div>
+          <button class="btn w-100 btn-primary"> Start Trial </button>
+        </form>
+        <small class="text-muted"> <a class="text-reset" data-bs-dismiss="modal" href="#!">No thanks, I hate free stuff.</a> </small> </div>
+    </div>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+  <div class="container-lg"> <a class="navbar-brand d-lg-none" href="index.html">Kudiland Forum</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav justify-content-end w-100">
+        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" id="landingsDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> Categories </a>
+          <div class="dropdown-positioner">
+            <div class="dropdown-menu dropdown-menu-xl dropdown-menu-flush" aria-labelledby="landingsDropdown">
+              <div class="row align-items-center gx-0">
+                <div class="col-md-6 order-1 dropdown-menu-col rounded-top-start-0 bg-dark pt-4 py-lg-5">
+                  <div class="dropdown-menu-body">
+                    <h6 class="dropdown-header text-uppercase text-primary-light d-none d-lg-block"> Services </h6>
+                    <a class="d-flex text-decoration-none" href="coworking.html">
+                    <div class="icon icon-sm text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                          <path d="M0 0h24v24H0z"/>
+                          <path d="M5.133 2.036c6.945 3.876 9.445 8.206 7.5 12.99-4.97-.79-7.47-5.12-7.5-12.99z" fill="#335EEA" opacity=".3"/>
+                          <path d="M18.742 2.036c-6.945 3.876-9.445 8.206-7.5 12.99 4.97-.79 7.47-5.12 7.5-12.99z" fill="#335EEA" opacity=".3"/>
+                          <path d="M12 1c-4.076 6.83-4.076 11.83 0 15 3.91-3.17 3.91-8.17 0-15z" fill="#335EEA" opacity=".3"/>
+                          <path d="M6.344 13h11.312a1 1 0 01.958 1.287l-2.186 7.288A2 2 0 0114.512 23H9.488a2 2 0 01-1.916-1.425l-2.186-7.288A1 1 0 016.344 13z" fill="#335EEA"/>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="ms-3">
+                      <p class="fw-bold text-white mb-0"> Coworking </p>
+                      <span class="text-gray-500"> Minimal, image-focused content </span> </div>
+                    </a> <a class="d-flex text-decoration-none mt-4" href="hiring-agency.html">
+                    <div class="icon icon-sm text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                          <path d="M0 0h24v24H0z"/>
+                          <path d="M12 11a4 4 0 110-8 4 4 0 010 8z" fill="#335EEA" opacity=".3"/>
+                          <path d="M3 20.2c.388-4.773 4.262-7.2 8.983-7.2 4.788 0 8.722 2.293 9.015 7.2.012.195 0 .8-.751.8H3.727c-.25 0-.747-.54-.726-.8z" fill="#335EEA"/>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="ms-3">
+                      <p class="fw-bold text-white mb-0"> Hiring Platform </p>
+                      <span class="text-gray-500"> A hiring service platform </span> </div>
+                    </a> <a class="d-flex text-decoration-none mt-4" href="course.html">
+                    <div class="icon icon-sm text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                          <path d="M0 0h24v24H0z"/>
+                          <path d="M6 3h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2zm-.5 2a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm0 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1z" fill="#335EEA" opacity=".3"/>
+                          <path d="M11.352 14.572l2.605-1.78a.5.5 0 00.001-.825l-2.605-1.792a.5.5 0 00-.783.412v3.572a.5.5 0 00.782.413z" fill="#335EEA"/>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="ms-3">
+                      <p class="fw-bold text-white mb-0"> Course </p>
+                      <span class="text-gray-500"> React programming course </span> </div>
+                    </a> <a class="d-flex text-decoration-none mt-4" href="software-automation.html">
+                    <div class="icon icon-sm text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                          <path d="M0 0h24v24H0z"/>
+                          <path d="M8 7a1 1 0 110-2h8a4 4 0 110 8H8a2 2 0 100 4h9a1 1 0 010 2H8a4 4 0 110-8h8a2 2 0 100-4H8z" fill="#335EEA" opacity=".3"/>
+                          <path d="M9.707 8.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 1.414L7.414 6l2.293 2.293zM14.293 20.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 00-1.414 1.414L16.586 18l-2.293 2.293z" fill="#335EEA"/>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="ms-3">
+                      <p class="fw-bold text-white mb-0"> Automated Integrations </p>
+                      <span class="text-gray-500"> Digital integration software </span> </div>
+                    </a> </div>
+                </div>
+                <div class="col-md-6 order-0 dropdown-menu-col">
+                  <div class="dropdown-menu-body">
+                    <h6 class="dropdown-header text-uppercase d-none d-lg-block"> Software </h6>
+                    <a class="d-flex text-decoration-none text-reset" href="robo-advisor.html">
+                    <div class="icon icon-sm text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                          <path d="M0 0h24v24H0z"/>
+                          <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" fill="#335EEA" opacity=".3"/>
+                          <path d="M18.5 11h-13A1.5 1.5 0 004 12.5v.5h4.586a1 1 0 01.707.293l1 1a2.414 2.414 0 003.414 0l1-1a1 1 0 01.707-.293H20v-.5a1.5 1.5 0 00-1.5-1.5zM5.5 6A1.5 1.5 0 004 7.5V8h16v-.5A1.5 1.5 0 0018.5 6h-13z" fill="#335EEA"/>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="ms-3">
+                      <p class="fw-bold mb-0"> Robo Advisor </p>
+                      <span class="text-muted"> A simple and professional layout </span> </div>
+                    </a> <a class="d-flex text-decoration-none text-reset mt-4" href="analytics-saas.html">
+                    <div class="icon icon-sm text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                          <path d="M0 0h24v24H0z"/>
+                          <path d="M4.002 12.2L13 14V4.062A8.001 8.001 0 0112 20a8 8 0 01-7.998-7.8z" fill="#335EEA" opacity=".3"/>
+                          <path d="M3.06 10.012A8.001 8.001 0 0111 3v8.6l-7.94-1.588z" fill="#335EEA"/>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="ms-3">
+                      <p class="fw-bold mb-0"> Analytics SaaS </p>
+                      <span class="text-muted"> UI-heavy product example </span> </div>
+                    </a> <a class="d-flex text-decoration-none text-reset mt-4" href="e-commerce-platform.html">
+                    <div class="icon icon-sm text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                          <path d="M0 0h24v24H0z"/>
+                          <path d="M18.145 11.844l-.698 4.185a1 1 0 01-1.165.82L4.913 14.78a1 1 0 01-.783-.709L2.306 7.685a1 1 0 01.961-1.275h13.726l.613-2.627a1.18 1.18 0 011.15-.912h2.064a1.18 1.18 0 110 2.36h-1.128l-1.547 6.613z" fill="#335EEA" opacity=".3"/>
+                          <path d="M6.5 21a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm9 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#335EEA"/>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="ms-3">
+                      <p class="fw-bold mb-0"> E-Commerce Platform </p>
+                      <span class="text-muted"> SaaS for sales of goods </span> </div>
+                    </a> <a class="d-flex text-decoration-none text-reset mt-4" href="mobile-chat-app.html">
+                    <div class="icon icon-sm text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                          <path d="M0 0h24v24H0z"/>
+                          <path d="M7.139 4v15h9.722V4H7.14zm.694-3h8.334c1.406 0 2.083.981 2.083 2.5v17c0 1.519-.677 2.5-2.083 2.5H7.833c-1.406 0-2.083-.981-2.083-2.5v-17c0-1.519.677-2.5 2.083-2.5z" fill="#335EEA"/>
+                          <path fill="#335EEA" opacity=".3" d="M7 4v15h10V4z"/>
+                          <circle fill="#335EEA" cx="12" cy="21" r="1"/>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="ms-3">
+                      <p class="fw-bold mb-0"> Mobile Apps </p>
+                      <span class="text-muted"> Minimal layout for mobile apps </span> </div>
+                    </a> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> Pages </a>
+          <div class="dropdown-positioner">
+            <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="pagesDropdown">
+              <div class="row gx-0">
+                <div class="col">
+                  <h6 class="dropdown-header text-uppercase mb-3"> Company </h6>
+                  <a class="dropdown-item" href="about.html"> About </a> <a class="dropdown-item" href="pricing.html"> Pricing </a> <a class="dropdown-item" href="pricing-feature-list.html"> Pricing Table </a> <a class="dropdown-item" href="career-listing.html"> Careers </a> <a class="dropdown-item" href="career-benefits.html"> Job benefits </a> <a class="dropdown-item" href="contact.html"> Contact </a> <a class="dropdown-item" href="faq.html"> FAQ </a><a class="dropdown-item" href="terms.html"> Terms </a> </div>
+                <div class="col">
+                  <h6 class="dropdown-header text-uppercase mb-3"> Blog </h6>
+                  <a class="dropdown-item" href="blog-listing.html"> Listing </a> <a class="dropdown-item" href="blog-post.html"> Article </a> <a class="dropdown-item" href="blog-post-cover.html"> Cover Article </a>
+                  <h6 class="dropdown-header text-uppercase mb-3"> Help Center </h6>
+                  <a class="dropdown-item" href="help-center.html"> Overview </a> <a class="dropdown-item" href="help-center-article.html"> Article </a> </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <a class="navbar-brand d-none d-lg-block px-lg-6" href="index.html">Kudiland Forum</a>
+      <ul class="navbar-nav justify-content-start w-100">
+        <li class="nav-item dropdown"> 
+          <a class="nav-link"  href="#" > Login </a> 
+        </li>
+        <li class="nav-item dropdown"> 
+          <a class="nav-link"  href="#" > Regietration </a> 
+        </li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="pt-6 pt-md-8 bg-light pb-6 pb-md-8">
+  <div class="container-lg">
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-10 text-center">
+        <h1 class="display-4 d-none d-xl-inline mb-4"> Let's talk about <span class="text-underline-warning "><span data-typed='{"strings": ["Politics", " Jobs/Vacancies", "Business", "Investment", "Education","Properties","Health"]}'></span></span><span class="text-underline-warning d-xl-none">here</span>. </h1>
+        <h3 class="my-2">KUDILAND  NIGERIAN FORUMS        </h3>
+        <p class="fs-lg text-muted d-none" data-aos="fade-up" data-aos-delay="50"> Find the perfect hire in under 72 hours or our services are free. </p>
+        
+        <p>
+          <a href="" class="badge bg-primary rounded-pill">Nairaland / General: Politics</a>
+          <a href="" class="badge bg-primary rounded-pill">Crime</a>
+          <a href="" class="badge bg-primary rounded-pill">Romance</a>
+          <a href="" class="badge bg-primary rounded-pill">Jobs/Vacancies</a>
+          <a href="" class="badge bg-primary rounded-pill">Career</a>
+          <a href="" class="badge bg-primary rounded-pill">Business</a>
+          <a href="" class="badge bg-primary rounded-pill">Investment</a>
+          <a href="" class="badge bg-primary rounded-pill">NYSC</a>
+          <a href="" class="badge bg-primary rounded-pill">Education</a>
+          <a href="" class="badge bg-primary rounded-pill">Autos</a>
+          <a href="" class="badge bg-primary rounded-pill">Car Talk</a>
+          <a href="" class="badge bg-primary rounded-pill">Properties</a>
+          <a href="" class="badge bg-primary rounded-pill">Health</a>
+          <a href="" class="badge bg-primary rounded-pill">Travel</a>
+          <a href="" class="badge bg-primary rounded-pill">Family</a>
+          <a href="" class="badge bg-primary rounded-pill">Culture</a>
+          <a href="" class="badge bg-primary rounded-pill">Religion</a>
+          <a href="" class="badge bg-primary rounded-pill">Culture</a>
+          <a href="" class="badge bg-primary rounded-pill">Food</a>
+          <a href="" class="badge bg-primary rounded-pill">Diaries</a>
+          <a href="" class="badge bg-primary rounded-pill">Nairaland Ads</a>
+          <a href="" class="badge bg-primary rounded-pill">Pets</a>
+          <a href="" class="badge bg-primary rounded-pill">Agriculture</a> 
+
+        </p>
+        <form class="mb-10 mb-md-0">
+          <div class="input-group rounded-top-start rounded-bottom-end shadow">
+            <input type="email" class="form-control bg-white" placeholder="Search here" aria-label="Where’s your company?" aria-describedby="searchButton">
+            <button class="btn btn-white" type="button" id="searchButton"> Search </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-5 py-md-5">
+  <div class="container-lg">
+    <div class="row mt-n6">
+      <div class="col-md-4 text-center mt-6" data-aos="fade-up" data-aos-delay="100"> <img class="img-fluid mb-6 rounded-top-start rounded-bottom-end" src="assets/img/illustrations/ban1.jpg" alt="..."> </div>
+      <div class="col-md-4 text-center mt-6" data-aos="fade-up" data-aos-delay="150"> <img class="img-fluid mb-6 rounded-top-start rounded-bottom-end" src="assets/img/illustrations/ban2.jpg" alt="..."> </div>
+      <div class="col-md-4 text-center mt-6" data-aos="fade-up" data-aos-delay="200"> <img class="img-fluid mb-6 rounded-top-start rounded-bottom-end" src="assets/img/illustrations/ban3.jpg" alt="..."> </div>
+    </div>
+  </div>
+</section>
+<section class="pt-5 pt-md-5 pb-5">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-md-12">
+        <hr class="hr-sm bg-success ms-0 mb-6">
+        <h2 class="display-5 mb-9"> Explore our services to find the match. </h2>
+      </div>
+    </div>
+    <div class="row mt-n6">
+      <div class="col-md-6 col-lg-3">
+        <div class="card card-sm rounded-top-start rounded-bottom-end mt-6"> <img class="card-img rounded-top-start" src="assets/img/hiring-agency/service-1.jpg" alt="...">
+          <div class="position-relative">
+            <div class="shape shape-fluid-x shape-top text-white">
+              <div class="shape-img pb-5">
+                <svg viewBox="0 0 100 50" preserveAspectRatio="none">
+                  <path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="font-sans-serif mb-2"> Defining Roles </h3>
+            <small class="text-muted"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan. </small> </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card card-sm rounded-top-start rounded-bottom-end mt-6"> <img class="card-img rounded-top-start" src="assets/img/hiring-agency/service-2.jpg" alt="...">
+          <div class="position-relative">
+            <div class="shape shape-fluid-x shape-top text-white">
+              <div class="shape-img pb-5">
+                <svg viewBox="0 0 100 50" preserveAspectRatio="none">
+                  <path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="font-sans-serif mb-2"> Creating Reqs </h3>
+            <small class="text-muted"> In hac habitasse platea dictumst. Proin sit amet convallis enim. Sed auctor lorem id tortor dignissim. </small> </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card card-sm rounded-top-start rounded-bottom-end mt-6"> <img class="card-img rounded-top-start" src="assets/img/hiring-agency/service-3.jpg" alt="...">
+          <div class="position-relative">
+            <div class="shape shape-fluid-x shape-top text-white">
+              <div class="shape-img pb-5">
+                <svg viewBox="0 0 100 50" preserveAspectRatio="none">
+                  <path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="font-sans-serif mb-2"> Interviewing </h3>
+            <small class="text-muted"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan. </small> </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="card card-sm rounded-top-start rounded-bottom-end mt-6"> <img class="card-img rounded-top-start" src="assets/img/hiring-agency/service-4.jpg" alt="...">
+          <div class="position-relative">
+            <div class="shape shape-fluid-x shape-top text-white">
+              <div class="shape-img pb-5">
+                <svg viewBox="0 0 100 50" preserveAspectRatio="none">
+                  <path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="font-sans-serif mb-2"> Onboarding </h3>
+            <small class="text-muted"> In hac habitasse platea dictumst. Proin sit amet convallis enim. Sed auctor lorem id tortor dignissim. </small> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="pt-5 pt-md-5 pb-5">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-md-10">
+        <hr class="hr-sm bg-success ms-0 mb-6">
+        <h4 class="display-5 mb-9"> Latest News / Twitter / Facebook / How To Advertise </h4>
+      </div>
+    </div>
+    <div class="row mt-n6">
+
+      <ul class="list-group mx-2">
+        <a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+          <div class="row">
+            <div class="col-2 col-md-1"> 
+              <div class="icon text-primary-light mb-0">
+                <img src="assets/img/avatars/avatar-1.jpg" width="30" alt="..." class="avatar-img rounded-circle">                
+              </div>
+            </div>
+            <div class="col-10 col-md-8"> 
+              <p class="fs-lg fw-bold mb-0">
+                Beautiful Interfaces
+              </p> 
+              <p class="text-muted mb-0">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor.
+              </p>
+            </div>
+            <div class="col-6 col-md-1"> 
+              <p class="fs-lg fw-bold mb-2 text-secondary text-end">
+                300 Replies
+              </p> 
+            </div>
+            <div class="col-6  col-md-1"> 
+              <p class="fs-lg fw-bold text-secondary mb-2 text-end">
+                345 Views
+              </p>  
+            </div>
+          </div>
+        </a>
+
+        <a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+          <div class="row">
+            <div class="col-2 col-md-1"> 
+              <div class="icon text-primary-light mb-0">
+                <img src="assets/img/avatars/avatar-1.jpg" width="30" alt="..." class="avatar-img rounded-circle">                
+              </div>
+            </div>
+            <div class="col-10 col-md-8"> 
+              <p class="fs-lg fw-bold mb-0">
+                Beautiful Interfaces
+              </p> 
+              <p class="text-muted mb-0">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor.
+              </p>
+            </div>
+            <div class="col-6 col-md-1"> 
+              <p class="fs-lg fw-bold mb-2 text-secondary text-end">
+                300 Replies
+              </p> 
+            </div>
+            <div class="col-6  col-md-1"> 
+              <p class="fs-lg fw-bold text-secondary mb-2 text-end">
+                345 Views
+              </p>  
+            </div>
+          </div>
+        </a>
+
+
+        <a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+          <div class="row">
+            <div class="col-2 col-md-1"> 
+              <div class="icon text-primary-light mb-0">
+                <img src="assets/img/avatars/avatar-1.jpg" width="30" alt="..." class="avatar-img rounded-circle">                
+              </div>
+            </div>
+            <div class="col-10 col-md-8"> 
+              <p class="fs-lg fw-bold mb-0">
+                Beautiful Interfaces
+              </p> 
+              <p class="text-muted mb-0">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor.
+              </p>
+            </div>
+            <div class="col-6 col-md-1"> 
+              <p class="fs-lg fw-bold mb-2 text-secondary text-end">
+                300 Replies
+              </p> 
+            </div>
+            <div class="col-6  col-md-1"> 
+              <p class="fs-lg fw-bold text-secondary mb-2 text-end">
+                345 Views
+              </p>  
+            </div>
+          </div>
+        </a>
+         
+      </ul>
+
+      
+
+
+
+       
+    </div>
+  </div>
+</section>
+<footer class="footer py-8 py-md-11 bg-dark border-multicolor">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-md-4"> 
+        
+        <!-- Brand -->
+        <h2 class="font-serif text-white mb-1"> Kudiland Forum </h2>
+        <p class="text-white-60"> A better way to build. </p>
+      </div>
+      <div class="col-6 col-md">
+        <h6 class="text-uppercase text-white mb-3 mb-md-5"> Services </h6>
+        
+        <!-- List -->
+        <ul class="list-unstyled">
+          <li class="mb-3"> <a class="text-white-60" href="#!">Help Center</a> </li>
+          <li class="mb-3"> <a class="text-white-60" href="#!">Press</a> </li>
+          <li> <a class="text-white-60" href="#!">About us</a> </li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h6 class="text-uppercase text-white mb-3 mb-md-5"> Products </h6>
+        
+        <!-- List -->
+        <ul class="list-unstyled">
+          <li class="mb-3"> <a class="text-white-60" href="#!">Homepage</a> </li>
+          <li class="mb-3"> <a class="text-white-60" href="#!">Pages</a> </li>
+          <li class="mb-3"> <a class="text-white-60" href="#!">Legal</a> </li>
+          <li> <a class="text-white-60" href="#!">Terms</a> </li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h6 class="text-uppercase text-white mb-3 mb-md-5"> Services </h6>
+        
+        <!-- List -->
+        <ul class="list-unstyled">
+          <li class="mb-3"> <a class="text-white-60" href="#!">Help Center</a> </li>
+          <li class="mb-3"> <a class="text-white-60" href="#!">Press</a> </li>
+          <li> <a class="text-white-60" href="#!">About us</a> </li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h6 class="text-uppercase text-white mb-3 mb-md-5"> Connect </h6>
+        
+        <!-- List -->
+        <ul class="list-unstyled">
+          <li class="mb-3"> <a class="text-white-60" href="#!">Help Center</a> </li>
+          <li class="mb-3"> <a class="text-white-60" href="#!">Press</a> </li>
+          <li class="mb-3"> <a class="text-white-60" href="#!">About us</a> </li>
+          <li> <a class="text-white-60" href="#!">Pages</a> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>  
+<script src="assets/js/vendor.bundle.js"></script> 
+<script src="assets/js/theme.bundle.js"></script>
+</body>
+</html>
